@@ -38,3 +38,18 @@ body {
 .navbar-dark {
 	background-color: #512dab;
 }
+
+label {
+	padding: 0px 6px 0px 3px;
+}
+
+.card-header {
+	background-color: orange;
+}
+
+#res {
+	color: solid black;
+	background-color: orange;
+	width: 170%;
+	font-size: 125%;
+}
