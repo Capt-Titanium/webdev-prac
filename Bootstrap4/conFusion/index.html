@@ -33,7 +33,8 @@
                 
             </ul>
             <span class="navbar-text">
-                <a data-toggle="modal" data-target="#loginmodal">
+                <a id="loginbutton">
+                    <!-- data-toggle="modal" data-target="#loginmodal" -->
                     <span class="fa fa-sign-in"></span> Login
                 </a>
             </span>   
@@ -48,7 +49,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">Login </h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <button type="button" class="close" id="crosslogin">&times;</button>
                 </div>
                 <div class="modal-body">
                     <form>
@@ -70,7 +71,7 @@
                             </div>
                         </div>
                         <div class="form-row">
-                            <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-secondary btn-sm ml-auto" id="cancellogin">Cancel</button>
                             <button type="submit" class="btn btn-primary btn-sm ml-1">Sign in</button>        
                         </div>
                     </form>
@@ -85,7 +86,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">Reserve a Table </h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <button type="button" class="close" id="crossreserve">&times;</button>
                 </div>
                 <div class="modal-body">
                     
@@ -155,7 +156,8 @@
 
                         <div class="form-group row align-items-center">
                             <div class="col-12 offset-2">
-                                <button type="button" class="btn btn-secondary btn-l ml-auto" data-dismiss="modal">Cancel</button>
+                                <button type="button" class="btn btn-secondary btn-l ml-auto" id="cancelreserve">Cancel</button>
+                                    <!--data-dismiss="modal"-->
                                 <button type="submit" class="btn btn-primary btn-l ml-1">Reserve</button>
                             </div>
                         </div>
@@ -177,7 +179,8 @@
                         <img src="img/logo.png" class="img-fluid">
                     </div>
                     <div class="col-12 col-sm align-self-center">
-                        <a role="button" class="btn btn-block nav-link btn-warning" data-toggle="modal" data-target="#reserveit">Reserve Table</a>
+                        <a role="button" class="btn btn-block nav-link btn-warning" id="reservebutton">Reserve Table</a>
+                        <!-- data-toggle="modal" data-target="#reserveit"-->
                     </div>
         </div>
     </header>
@@ -422,6 +425,26 @@
                     $("#carouselbutton").children("span").removeClass('fa-play');
                     $("#carouselbutton").children("span").addClass('fa-pause');                    
                 }
+            });
+
+            $("#reservebutton").click(function(){
+                $("#reserveit").modal('toggle');
+            });
+            $('#cancelreserve').click(function(){
+                $('#reserveit').modal('hide');
+            });
+            $('#crossreserve').click(function(){
+                $('#reserveit').modal('hide');
+            });
+
+            $("#loginbutton").click(function(){
+                $("#loginmodal").modal('toggle');
+            });
+            $("#cancellogin").click(function(){
+                $("#loginmodal").modal('hide');
+            });
+            $("#crosslogin").click(function(){
+                $("#loginmodal").modal('hide');
             });
 
         });
